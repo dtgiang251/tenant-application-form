@@ -1,0 +1,122 @@
+{
+  "Error": {
+    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
+    "title": "Etwas ist schief gelaufen!"
+  },
+  "IndexPage": {
+    "description": "Dies ist ein Beispiel, das die Verwendung von <code>next-intl</code> mit dem Next.js App Router demonstriert. Bei Ändern der Sprache rechts oben ändert sich der Inhalt dieser Seite.",
+    "title": "Secretimmo"
+  },
+  "LocaleLayout": {
+    "title": "Secretimmo"
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unbekannt}}"
+  },
+  "Manifest": {
+    "name": ""
+  },
+  "Navigation": {
+    "home": "Start",
+    "pathnames": "Pfadnamen"
+  },
+  "NotFoundPage": {
+    "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
+    "title": "Seite nicht gefunden"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Erfahre mehr über next-intl in der offiziellen Dokumentation.",
+        "href": "https://next-intl.dev",
+        "title": "Dokumentation"
+      },
+      "source": {
+        "description": "Sieh dir den Quellcode dieses Beispiels auf GitHub an.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Quellcode"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Auch die Pfadnamen sind internationalisiert.</p><p>Wenn du die Standardsprache Englisch verwendest, siehst du <code>/en/pathnames</code> in der Adressleiste des Browsers auf dieser Seite.</p><p>Wenn du die Sprache auf Deutsch änderst, wird die URL entsprechend lokalisiert (<code>/de/pfadnamen</code>).</p>",
+    "title": "Pfadnamen"
+  },
+  "Footer": {
+      "company": "Société Anonyme mit einem Kapital von 100.000 € - RCS B258313 - TVA LU33290343",
+      "copyright": "2021-2025 © Secretimmo SA. Alle Rechte vorbehalten."
+    },
+    "Header": {
+      "header_1": "Ein vertraulicher Service, ausschließlich für außergewöhnliche Immobilien.",
+      "header_2": "Antwort innerhalb von 24 Stunden garantiert."
+    },
+    
+    "Home" : {
+      "banner_title": "Der diskrete Verkauf exklusiver Immobilien.",
+      "banner_button": "Jetzt Eignung prüfen",
+      "banner_support_title": "Wir helfen Ihnen gerne weiter",
+      "banner_support_desc": "Schreiben Sie uns vertraulich an",
+      "form": {
+        "title": "Jetzt Eignung prüfen",
+        "desc": "Unser Off-Market-Service ist außergewöhnlich – und nur ausgewählten Immobilien vorbehalten. <br/>Ihre Daten bleiben dabei jederzeit streng vertraulich.",
+        "secretimmo_title": "✅ Herzlichen Glückwunsch, Ihre Immobilie wird als außergewöhnlich angesehen und könnte Off-Market verkauft werden!",
+        "secretimmo_desc": "Bitte füllen Sie das Bewertungsformular aus, um den aktuellen Wert Ihrer Immobilie zu erfahren.",
+        "nextimmo_subtitle": "❌ Ihre Immobilie wird nicht als außergewöhnlich angesehen und könnte nicht Off-Market verkauft werden!",
+        "nextimmo_title": "Die gute Nachricht ist, dass Sie über Nextimmo, unseren Partner für den On-Market-Verkauf, sie effektiv verkaufen können.",
+        "nextimmo_desc": "Bitte füllen Sie das Bewertungsformular aus, um den aktuellen Wert Ihrer Immobilie zu erfahren.",
+        "criteria_title": "Kriterien",
+        "locality_label": "Ort",
+        "locality_placeholder": "Luxemburg",
+        "type_label": "Immobilientyp",
+        "select_type": "Wählen Sie einen Typ",
+        "propertyTypes": {
+          "home": "Haus|Einfamilienhaus|Herrenhaus|Architektenhaus|Immobilie|Denkmalschutzgebäude|Bauernhof",
+          "appartement": "Wohnung|Duplex|Triplex|Loft|Penthouse"
+        },
+        "surface_label": "Gesamtfläche",
+        "rooms_label": "Anzahl der Zimmer",
+        "exterior_title": "Außenbereich",
+        "garages_label": "Garagen",
+        "parkings_label": "Parkplätze",
+        "garden_label": "Garten",
+        "terrace_label": "Terrassen/Balkone",
+        "equipment_title": "Ausstattung",
+        "piscine_label": "Schwimmbad",
+        "sports_area_label": "Sportbereich",
+        "smart_home_label": "Smart Home",
+        "alarm_label": "Alarm",
+        "spa_label" : "Spa",
+        "terms_label": "Indem Sie dieses Kästchen ankreuzen, akzeptieren Sie unsere <privacyLink>Datenschutzrichtlinie</privacyLink>.",
+        "privacyLinkUrl" : "https://secretimmo.lu/de/privacy",
+        "submit_button": "Berechtigung überprüfen",
+        "secretimmo_button": "Bewertung bei Secretimmo anfordern",
+        "nextimmo_button": "Bewertung bei Nextimmo anfordern",
+        "first_name_label": "Vorname",
+        "last_name_label": "Nachname",
+        "phone_label": "Telefonnummer",
+        "email_label": "E-Mail",
+        "first_name_error": "Der Vorname muss zwischen 2 und 50 Zeichen enthalten und nur Buchstaben enthalten.",
+        "last_name_error": "Der Nachname muss zwischen 2 und 50 Zeichen enthalten und nur Buchstaben enthalten.",
+        "phone_error": "Ungültige Telefonnummer",
+        "email_error": "Ungültige E-Mail-Adresse",
+        "submit_success": "Ihre Anfrage wurde erfolgreich gesendet.",
+        "submit_error": "Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        "terms_error": "Bitte akzeptieren Sie die Bedingungen.",
+        "min_error": "Der Mindestwert muss größer oder gleich sein ",
+        "max_error": "Der Höchstwert muss kleiner oder gleich sein ",
+        "type_error": "Das Format des Wertes ist ungültig.",
+        "locality_error": "Das Format des Wertes ist ungültig.",
+        "required_error" : "Dieses Feld ist erforderlich."
+      },
+      "advantages_title": "Ihre Vorteile beim diskreten Off-Market-Verkauf mit Secretimmo",
+      "advantages": {
+        "0": "Die Vorteile eines Off-Market-Verkaufs Ihrer Luxusimmobilie mit Secretimmo|Ein sanfter Start für ein exklusives und gezieltes Publikum <br/>Präsentieren Sie Ihre Immobilie einer ausgewählten Gruppe von Partneragenturen und unserer Datenbank qualifizierter Käufer – ohne sofortige öffentliche Sichtbarkeit.",
+        "1": "Ihre Immobilie diskret präsentieren – noch bevor sie offiziell vermarktet wird.|Zeigen Sie Ihre Immobilie ernsthaften Käufern, noch bevor Sie in Vorbereitung oder Inszenierung investieren – ganz ohne Druck.",
+        "2": "Gezielte Nachfrage aufbauen – ganz ohne öffentliche Inserate.|Wecken Sie Interesse und Erwartungen, ohne Tage auf dem Markt zu sammeln oder eine sichtbare Preissenkung zu riskieren.",
+        "3": "Testen Sie den Preis und verfeinern Sie Ihre Strategie|Analysieren Sie vertraulich das Feedback potenzieller Käufer. Diese Erkenntnisse helfen Ihnen, Ihre Positionierung vor der öffentlichen Vermarktung präzise anzupassen.",
+        "4": "Erhalten Sie ernsthafte und wettbewerbsfähige Angebote|Erhalten Sie solide Angebote von Käufern, die bereit sind, für Sicherheit, Seltenheit und Diskretion einen Aufpreis zu zahlen.",
+        "5": "Wahren Sie Ihre Privatsphäre|Ihre Vertraulichkeit hat höchste Priorität. Fotos, Grundrisse und Details Ihrer Immobilie sind nur für Secretimmo-Agenten und ausgewählte Kunden zugänglich."
+      }
+    }
+}
