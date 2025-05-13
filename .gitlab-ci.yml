@@ -1,15 +1,15 @@
 image: node:20.17.0
 
 before_script:
-  - apt-get update -qq
-  - apt-get install -qq git
-  - "which ssh-agent || ( apt-get install -qq openssh-client )"
-  - mkdir -p ~/.ssh
-  - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
+  - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client wget gnupg -y )'
+  - wget -qO- https://get.docker.com/gpg | apt-key add -
   - eval $(ssh-agent -s)
-  - ssh-add ~/.ssh/id_rsa
-  - echo -e "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - touch ~/.ssh/config
+  - touch ~/.ssh/known_hosts
+  - chmod -R 400 ~/.ssh
+  - '[[ -f /.dockerinit ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
 deploy:
   stage: deploy
