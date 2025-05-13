@@ -1,0 +1,131 @@
+{
+  "Error": {
+    "description": "<p>Nous avons malheureusement rencontré une erreur.</p><p>Vous pouvez essayer de <retry>recharger la page</retry> que vous consultiez.</p>",
+    "title": "Quelque chose s'est mal passé !"
+  },
+  "IndexPage": {
+    "description": "Ceci est un exemple de base qui démontre l'utilisation de <code>next-intl</code> avec le routeur App de Next.js. Essayez de changer la langue en haut à droite pour voir le contenu s'adapter.",
+    "title": "Secretimmo"
+  },
+  "LocaleLayout": {
+    "title": "Secretimmo"
+  },
+  "LocaleSwitcher": {
+    "label": "Changer de langue",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Inconnu}}"
+  },
+  "Manifest": {
+    "name": "Secretimmo"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "pathnames": "Chemins"
+  },
+  "NotFoundPage": {
+    "description": "Veuillez vérifier l'adresse dans la barre de navigation ou utilisez le menu pour accéder à une page connue.",
+    "title": "Page introuvable"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "En savoir plus sur next-intl dans la documentation officielle.",
+        "href": "https://next-intl.dev",
+        "title": "Documentation"
+      },
+      "source": {
+        "description": "Parcourir le code source de cet exemple sur GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Code source"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Les chemins sont également internationalisés.</p><p>Si vous utilisez l’anglais par défaut, vous verrez <code>/en/pathnames</code> dans la barre d’adresse du navigateur sur cette page.</p><p>Si vous changez la langue en allemand, l’URL est localisée en conséquence (<code>/de/pfadnamen</code>).</p>",
+    "title": "Chemins"
+  },
+  "Footer": {
+    "company": "Société Anonyme au capital de 100.000€ - RCS B258313 - TVA LU33290343",
+    "copyright": "2021-2025 © Secretimmo SA. Tous les droits sont réservés.",
+    "designedBy": "Conçu par",
+    "metaLink": "Meta.lu",
+    "metaUrl": "https://www.meta.lu/fr",
+    "partnerText": "& Partenaire Premium de",
+    "nextimmoLink": "Nextimmo.lu",
+    "nextimmoUrl": "https://nextimmo.lu/",
+    "secretimmoLink": "Secretimmo.lu",
+    "secretimmoUrl": "https://secretimmo.lu/",
+    "goodworkLink": "Goodwork.lu", 
+    "goodworkUrl": "https://goodwork.lu/fr"
+  },
+  "Header": {
+    "header_1": "Un service confidentiel, réservé aux biens d’exception.",
+    "header_2": "Réponse sous 24 h garantie."
+  },
+  "Home": {
+    "banner_title": "La vente de prestige en discrétion.",
+    "banner_button": "Vérifier l’éligibilité de votre bien",
+    "banner_support_title": "Besoin d’assistance",
+    "banner_support_desc": "Écrivez-nous en toute confidentialité à",
+    "form": {
+      "title": "Vérifiez l’éligibilité de votre bien",
+      "desc": "La commercialisation en off-market chez Secretimmo est réservée aux biens de prestige, atypiques ou de luxe. <br />Pour vérifier si votre bien correspond à nos critères, nous vous invitons à effectuer un test d’éligibilité. <br />Vos données sont traitées de manière strictement confidentielle et ne sont jamais partagées sans votre accord.",
+      "secretimmo_title": "✅ Félicitations, votre bien est considéré comme un bien d’exception et pourrait être commercialisé en off-market !",
+      "secretimmo_desc": "Veuillez remplir le formulaire ci-dessous afin de connaître la valeur actuelle de votre propriété.",
+      "nextimmo_subtitle": "❌ Votre bien n’est pas considéré comme un bien d’exception et ne pourrait pas être commercialisé en off-market !",
+      "nextimmo_title": "La bonne nouvelle, c’est que via Nextimmo, notre partenaire en vente on-market, vous pouvez le vendre efficacement.",
+      "nextimmo_desc": "Veuillez remplir le formulaire ci-dessous afin de connaître la valeur actuelle de votre propriété.",
+      "criteria_title": "Critères",
+      "locality_label": "Localité",
+      "locality_placeholder": "Luxembourg",
+      "type_label": "Type de bien",
+      "select_type": "Sélectionner un type",
+      "propertyTypes": {
+        "home": "Maison|Maison individuelle|Maison de maître|Maison d’architecte|Propriété|Immeuble classé|Corps de ferme",
+        "appartement": "Appartement|Duplex|Triplex|Loft|Penthouse"
+      },
+      "surface_label": "Surface totale",
+      "rooms_label": "Nombre de chambres",
+      "exterior_title": "Extérieur",
+      "garages_label": "Garages",
+      "parkings_label": "Parkings",
+      "garden_label": "Jardin",
+      "terrace_label": "Terrasses/Balcons",
+      "equipment_title": "Équipement",
+      "piscine_label": "Piscine",
+      "sports_area_label": "Espace sport",
+      "smart_home_label": "Domotique",
+      "alarm_label": "Alarme",
+      "spa_label" : "Spa",
+      "terms_label": "En cochant cette case, vous acceptez notre <privacyLink>Politique de confidentialité</privacyLink>.",
+      "privacyLinkUrl" : "https://secretimmo.lu/privacy",
+      "submit_button": "Vérifier l'éligibilité",
+      "secretimmo_button": "Demander une évaluation Secretimmo",
+      "nextimmo_button": "Demander une évaluation Nextimmo",
+      "first_name_label": "Prénom",
+      "last_name_label": "Nom de famille",
+      "phone_label": "Numéro de téléphone",
+      "email_label": "E-mail",
+      "first_name_error": "Le prénom doit comporter entre 2 et 50 caractères et contenir uniquement des lettres.",
+      "last_name_error": "Le nom de famille doit comporter entre 2 et 50 caractères et contenir uniquement des lettres.",
+      "phone_error": "Numéro de téléphone invalide.",
+      "email_error": "Adresse e-mail invalide.",
+      "submit_success": "Votre demande a été envoyée avec succès.",
+      "submit_error": "Une erreur est survenue lors de l’envoi du formulaire. Veuillez réessayer.",
+      "terms_error": "Veuillez accepter les conditions.",
+      "min_error": "La valeur minimale doit être supérieure ou égale à ",
+      "max_error": "La valeur maximale doit être inférieure ou égale à ",
+      "type_error": "Le format du type est invalide.",
+      "locality_error": "Le format de la localité est invalide.",
+      "required_error": "Ce champ est requis."
+    },
+    "advantages_title": "Les avantages de lancer la vente de votre bien de prestige en off-market avec Secretimmo",
+    "advantages": {
+      "0": "Les avantages de lancer la vente de votre bien de prestige en off-market avec Secretimmo|Un lancement en douceur auprès d’une audience exclusive et ciblée <br/> Présentez votre propriété à une sélection restreinte d’agences partenaires et à notre base d’acheteurs actifs qualifiés, sans exposition publique immédiate.",
+      "1": "Exposez avant d’être prêt à entrer sur le marché|Faites découvrir votre bien à des acquéreurs sérieux avant même d’investir dans sa préparation ou sa mise en scène, et sans pression.",
+      "2": "Générez de la demande dès les premières étapes|Créez de l’intérêt et de l’anticipation sans accumuler de jours sur le marché ni risquer une baisse visible de votre prix.",
+      "3": "Testez votre prix et affinez votre stratégie|Analysez les retours des acheteurs en toute confidentialité. Ces informations, recueillies avant la diffusion publique, vous permettent d’ajuster votre positionnement avec précision.",
+      "4": "Attirez des offres sérieuses et compétitives|Recevez des propositions solides de la part d’acquéreurs prêts à offrir une prime pour la certitude, la rareté et la discrétion.",
+      "5": "Préservez votre vie privée|Votre confidentialité est une priorité. Les photos, plans et détails de votre bien ne sont accessibles qu’aux agents Secretimmo et à leurs clients sélectionnés."
+    }
+  }
+}
