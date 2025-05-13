@@ -1,0 +1,34 @@
+cache:
+  paths:
+    - tmp/node_modules/
+
+image: node:20.17.0
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -qq git
+  - "which ssh-agent || ( apt-get install -qq openssh-client )"
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+deploy:
+  stage: deploy
+  environment:
+    name: develop
+    url: https://develop.off-market.lu
+  script:
+    - bash deploy/deploy.sh
+  only:
+    - develop
+
+deploy_prod:
+  stage: deploy
+  environment:
+    name: production
+    url: https://www.off-market.lu
+  script:
+    - bash deploy_prod/deploy.sh
+  only:
+    - master

@@ -1,0 +1,421 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Core theme configuration */
+@theme {
+    /* Font families */
+    --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  
+    /* Colors */
+    /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
+    --color-primary: #212151;
+    --color-gray: #E5E7EB;
+    --color-black2: #353433;
+    --color-green: #BAFF00;
+  
+    --color-primary-50: oklch(0.971 0.014 343.198);
+    --color-primary-100: oklch(0.948 0.028 342.258);
+    --color-primary-200: oklch(0.899 0.061 343.231);
+    --color-primary-300: oklch(0.823 0.12 346.018);
+    --color-primary-400: oklch(0.718 0.202 349.761);
+    --color-primary-500: oklch(0.656 0.241 354.308);
+    --color-primary-600: oklch(0.592 0.249 0.584);
+    --color-primary-700: oklch(0.525 0.223 3.958);
+    --color-primary-800: oklch(0.459 0.187 3.815);
+    --color-primary-900: oklch(0.408 0.153 2.432);
+    --color-primary-950: oklch(0.284 0.109 3.907);
+  
+    --color-gray-50: oklch(0.985 0.002 247.839);
+    --color-gray-100: oklch(0.967 0.003 264.542);
+    --color-gray-200: oklch(0.928 0.006 264.531);
+    --color-gray-300: oklch(0.872 0.01 258.338);
+    --color-gray-400: oklch(0.707 0.022 261.325);
+    --color-gray-500: oklch(0.551 0.027 264.364);
+    --color-gray-600: oklch(0.446 0.03 256.802);
+    --color-gray-700: oklch(0.373 0.034 259.733);
+    --color-gray-800: oklch(0.278 0.033 256.848);
+    --color-gray-900: oklch(0.21 0.034 264.665);
+    --color-gray-950: oklch(0.13 0.028 261.692);
+  
+  
+    /* Line heights */
+    --line-height-11: 2.75rem;
+    --line-height-12: 3rem;
+    --line-height-13: 3.25rem;
+    --line-height-14: 3.5rem;
+  
+    /* Z-index values */
+    --z-60: 60;
+    --z-70: 70;
+    --z-80: 80;
+  
+    --container-5xl: 75rem;
+  }
+
+  @layer utilities {
+    .border-1 {
+      border-width: 1px;
+    }
+    .border-l-1 {
+        border-left-width: 1px;
+    }
+  }
+
+  
+  /*
+    The default border color has changed to `currentColor` in Tailwind CSS v4,
+    so we've added these compatibility styles to make sure everything still
+    looks the same as it did with Tailwind CSS v3.
+  
+    If we ever want to remove these styles, we need to add an explicit border
+    color utility to any element that depends on these defaults.
+  */
+  @layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: var(--color-gray-200, currentColor);
+    }
+  
+    a,
+    button {
+      outline-color: var(--color-primary-500);
+    }
+  
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid;
+      border-radius: var(--radius-sm);
+      outline-color: var(--color-primary-500);
+    }
+  
+    .container {
+      @media (min-width: 1280px) {
+        max-width: 1280px !important;
+      }
+      @media (max-width: 1024px) {
+          max-width: 100% !important;
+          padding-left: 40px;
+          padding-right: 40px;
+      }
+      @media (max-width: 767px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+  
+  @layer utilities {
+    .prose {
+      & a {
+        color: var(--color-primary-500);
+        &:hover {
+          color: var(--color-primary-600);
+        }
+        & code {
+          color: var(--color-primary-400);
+        }
+      }
+      & :where(h1, h2) {
+        font-weight: 700;
+        letter-spacing: var(--tracking-tight);
+      }
+      & h3 {
+        font-weight: 600;
+      }
+      & :where(code):not(pre code) {
+        color: var(--color-indigo-500);
+      }
+    }
+  
+    .prose-invert {
+      & a {
+        color: var(--color-primary-500);
+        &:hover {
+          color: var(--color-primary-400);
+        }
+        & code {
+          color: var(--color-primary-400);
+        }
+      }
+      & :where(h1, h2, h3, h4, h5, h6) {
+        color: var(--color-gray-100);
+      }
+    }
+  }
+  
+  
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+  
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter);
+  }
+
+  body {
+    font-family: var(--font-inter);
+    min-width: 340px;
+    touch-action: manipulation;
+  -ms-touch-action: manipulation;
+    @apply text-sm;
+  }
+  
+  .task-list-item::before {
+    @apply hidden;
+  }
+  
+  .task-list-item {
+    @apply list-none;
+  }
+  
+  .footnotes {
+    @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  }
+  
+  .data-footnote-backref {
+    @apply no-underline;
+  }
+  
+  .csl-entry {
+    @apply my-5;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition:
+      background-color 600000s 0s,
+      color 600000s 0s;
+  }
+  
+  .katex-display {
+    overflow: auto hidden;
+  }
+  
+  .content-header-link {
+    opacity: 0;
+    margin-left: -24px;
+    padding-right: 4px;
+  }
+  
+  .content-header:hover .content-header-link,
+  .content-header-link:hover {
+    opacity: 1;
+  }
+  
+  .linkicon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .menu-active {
+    @apply relative;
+  }
+  
+  .menu-active::before {
+    content: "";
+    @apply absolute w-full h-1 bottom-0 left-0 bg-primary;
+  }
+  
+  .header-border-right {
+    border-right: 1px solid #E5E7EB;
+  }
+  
+  .language-btn {
+    background-color: #262626E5;
+  }
+  
+  .banner h1 {
+    font-size: 70px;
+    line-height: 1.2;
+    @media (max-width: 767px) {
+      font-size: 50px;
+      line-height: 54px;
+    }
+  }
+  
+  .banner:before {
+    content: "";
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .form-sub-title {
+    @apply font-bold text-[22px] pb-[26px] mb-[26px] border-b border-gray-200 text-center;
+  }
+  
+  .property-form label {
+    @apply font-bold block mb-1.5;
+  }
+  
+  .property-form .form-radios label {
+    @apply flex flex-row gap-2 items-center relative cursor-pointer;
+  }
+  
+  .property-form select,
+  .property-form input[type="text"],
+  .property-form input[type="email"],
+  .property-form input[type="number"] {
+    outline: none;
+    font-size: 16px;
+    @apply border border-[#E5E7EB] px-3 py-4 text-black leading-5.5 w-full rounded-[4px];
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;  /* Firefox */
+    -webkit-appearance: none;    /* Safari, Chrome */
+    appearance: none;            /* Các trình duyệt khác */
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;   /* Ẩn nút spin button trong Chrome/Safari */
+    margin: 0;
+  }
+  
+  
+  .property-form .form-radios label input {
+    @apply opacity-0 invisible w-0;
+  }
+  
+  .property-form .form-radios label span {
+    padding-left: 25px;
+    position: relative;
+  }
+  
+  .property-form .form-radios label span:before {
+    content:"";
+    @apply absolute w-[17px] h-[17px] border-2 border-[#7C8087] rounded-full left-0;
+  }
+  
+  .property-form .form-radios label input:checked + span:after {
+    content: "";
+    @apply absolute w-[9px] h-[9px] rounded-full left-1 top-1 bg-black ;
+  }
+  
+  .property-form .checkbox label {
+    @apply font-normal flex flex-row gap-3 justify-center items-start;
+  }
+  
+  .property-form .checkbox label span {
+    line-height: 1.2
+  }
+  
+  .property-form .m2 {
+    @apply block relative;
+  }
+  
+  .property-form .m2:before {
+    content: "㎡";
+    font-family: var(--font-poppins);
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 0 6px 6px 0;
+    @apply absolute w-[39px] right-0 h-full  flex items-center justify-center;
+  }
+  
+  [type='checkbox']:focus, [type='radio']:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  [type='checkbox'] {
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    min-width: 13px;
+  }
+  
+  [type='checkbox']:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    border-color: transparent;
+    background-color: #000;
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  
+  .cities-list {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .city-item {
+    padding: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+  
+  .city-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .form-wrap:after {
+    content: "";
+    background: url(/static/dots.svg) repeat center;
+    @apply absolute bottom-0 left-0 w-full h-[460px];
+  }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('/static/down.svg') no-repeat right center;
+  background-size: 20px 20px;
+  background-position: 95% center;
+}
+
+select:focus {
+  outline: none;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3; /* Màu nền */
+    border-top: 4px solid #000; /* Màu spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite; /* Vòng quay spinner */
+    margin: 0 auto;
+  }
+
+  input, select, textarea {
+    -webkit-text-size-adjust: 100%;
+    zoom: 1;
+  }
+  
+  
+  
+  /* Định nghĩa animation quay */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
