@@ -39,9 +39,32 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
 
   return {
     viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
-    title: t('title')
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('ogTitle'),
+      description: t('ogDescription'),
+      images: [{
+        url: 'https://off-market.lu/images/prestige-cover.jpg',
+      }],
+      url: 'https://off-market.lu',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('twitterTitle'),
+      description: t('twitterDescription'),
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: `https://off-market.lu/${locale}`,
+    }
   };
 }
+
 
 export default async function LocaleLayout({children, params}: Props) {
   // Ensure that the incoming `locale` is valid

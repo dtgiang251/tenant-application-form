@@ -8,7 +8,12 @@
     "title": "Secretimmo"
   },
   "LocaleLayout": {
-    "title": "Secretimmo"
+    "title": "Vente confidentielle de biens immobiliers d'exception au Luxembourg en off-market par Secretimmo",
+    "description": "Vendez votre bien de prestige en toute discrétion en hors marché avec Secretimmo. Service confidentiel, réseau d'acheteurs qualifiés, estimation gratuite et rapide.",
+    "ogTitle": "Vente confidentielle de biens immobiliers d'exception en off-market",
+    "ogDescription": "Secretimmo est un service discret réservé aux propriétaires souhaitant vendre sans exposition grand publique.",
+    "twitterTitle": "Vente immobilière discrète",
+    "twitterDescription": "Service confidentiel dédié aux biens haut de gamme à vendre au Luxembourg."
   },
   "LocaleSwitcher": {
     "label": "Sprache ändern",
