@@ -60,7 +60,7 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
       follow: true,
     },
     alternates: {
-      canonical: `https://off-market.lu/${locale}`,
+      canonical: t('canonical'),
     }
   };
 }

@@ -13,7 +13,8 @@
     "ogTitle": "Diskreter Verkauf von außergewöhnlichen Immobilien im Off-Market",
     "ogDescription": "Secretimmo ist ein diskreter Service für Eigentümer, die ohne öffentliche Bekanntmachung verkaufen möchten.",
     "twitterTitle": "Diskreter Immobilienverkauf",
-    "twitterDescription": "Vertraulicher Service für hochwertige Immobilienverkäufe in Luxemburg."
+    "twitterDescription": "Vertraulicher Service für hochwertige Immobilienverkäufe in Luxemburg.",
+    "canonical" : "https://off-market.lu/de"
   },
   "LocaleSwitcher": {
     "label": "Sprache ändern",

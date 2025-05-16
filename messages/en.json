@@ -13,7 +13,8 @@
     "ogTitle": "Confidential Sale of Exceptional Real Estate Off-Market",
     "ogDescription": "Secretimmo is a discreet service dedicated to owners wishing to sell without public exposure.",
     "twitterTitle": "Discreet Real Estate Sale",
-    "twitterDescription": "Confidential service dedicated to high-end properties for sale in Luxembourg."
+    "twitterDescription": "Confidential service dedicated to high-end properties for sale in Luxembourg.",
+    "canonical" : "https://off-market.lu/en"
   },
   "LocaleSwitcher": {
     "label": "Change language",

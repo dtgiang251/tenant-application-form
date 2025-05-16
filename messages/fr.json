@@ -13,7 +13,8 @@
     "ogTitle": "Vente confidentielle de biens immobiliers d'exception en off-market",
     "ogDescription": "Secretimmo est un service discret réservé aux propriétaires souhaitant vendre sans exposition grand publique.",
     "twitterTitle": "Vente immobilière discrète",
-    "twitterDescription": "Service confidentiel dédié aux biens haut de gamme à vendre au Luxembourg."
+    "twitterDescription": "Service confidentiel dédié aux biens haut de gamme à vendre au Luxembourg.",
+    "canonical" : "https://off-market.lu/"
   },
   "LocaleSwitcher": {
     "label": "Changer de langue",
