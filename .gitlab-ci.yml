@@ -1,12 +1,7 @@
-cache:
-  paths:
-    - tmp/node_modules/
-
-image: node:20.17.0
-
 before_script:
   - apt-get update -qq
   - apt-get install -qq git
+  # Setup SSH deploy keys
   - "which ssh-agent || ( apt-get install -qq openssh-client )"
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
@@ -27,7 +22,7 @@ deploy_prod:
   stage: deploy
   environment:
     name: production
-    url: https://www.off-market.lu
+    url: https://off-market.lu
   script:
     - bash deploy_prod/deploy.sh
   only:

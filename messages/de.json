@@ -23,7 +23,8 @@
   },
   "NotFoundPage": {
     "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
-    "title": "Seite nicht gefunden"
+    "title": "Seite nicht gefunden",
+    "backToHome" : "Zurück zur Startseite"
   },
   "PageLayout": {
     "links": {
