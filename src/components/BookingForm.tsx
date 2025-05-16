@@ -1,5 +1,5 @@
 import {useTranslations} from 'next-intl';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
 
@@ -90,9 +90,31 @@ export default function BookingForm() {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
   const [selectedType, setSelectedType] = useState('');
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current && 
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownVisible(false);
+      }
+    };
+
+    // Thêm event listener khi dropdown hiển thị
+    if (dropdownVisible) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    // Cleanup event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownVisible]);
 
   const toggleCategory = (category: string, event: React.MouseEvent) => {
     event.stopPropagation(); // Ngăn sự kiện lan đến phần tử cha
@@ -755,7 +777,7 @@ export default function BookingForm() {
 
                 <div className="item">
         <label>{t('form.type_label')}</label>
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
           <button
             type="button"
             className="w-full SelectTypeButton p-3 bg-white border-1 border-gray-100 px-3 py-4 text-black leading-5.5 rounded-[4px] flex justify-between items-center cursor-pointer"
