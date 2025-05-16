@@ -1,4 +1,13 @@
-// Note that `app/[locale]/[...rest]/page.tsx`
-// is necessary for this page to render.
+import NotFoundPage from '@/components/NotFoundPage';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
 
-export {default} from '@/components/NotFoundPage';
+export default async function LocalizedNotFound() {
+  const messages = await getMessages();
+  
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <NotFoundPage />
+    </NextIntlClientProvider>
+  );
+}

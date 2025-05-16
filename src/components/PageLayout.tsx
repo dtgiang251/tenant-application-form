@@ -9,10 +9,20 @@ import BookingForm from './BookingForm';
 type Props = {
   children?: ReactNode;
   title: ReactNode;
+  isNotFoundPage?: boolean;
 };
 
-export default function PageLayout({children, title}: Props) {
+export default function PageLayout({children, title, isNotFoundPage = false}: Props) {
   const t = useTranslations('Home');
+
+  if (isNotFoundPage) {
+    return (
+      <div className="container mx-auto px-4 py-20">
+        <h1 className="text-3xl font-bold mb-6 text-center text-red-500">{title}</h1>
+        {children}
+      </div>
+    );
+  }
 
   const handleScrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -38,9 +48,6 @@ export default function PageLayout({children, title}: Props) {
 
   return (
     <>
-      {t('banner_title') === 'hi' && (
-      <div className="hidden">{children}{title}</div>
-      )}
       <div className="banner relative z-20 bg-[url('/static/banner.jpg')] h-[462px] md:h-[754px] lg:h-[772px] bg-cover bg-center">
         <div className="container flex items-center h-full relative z-10 mx-auto pt-5 pb-5">
           <div className="max-w-[760px] relative z-50 mx-auto flex flex-col justify-between items-center gap-10 text-center">

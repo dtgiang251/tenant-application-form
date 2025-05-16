@@ -26,7 +26,8 @@ declare const messages: {
   },
   "NotFoundPage": {
     "description": "Veuillez vérifier l'adresse dans la barre de navigation ou utilisez le menu pour accéder à une page connue.",
-    "title": "Page introuvable"
+    "title": "Page introuvable",
+    "backToHome" : "Retour à l’accueil"
   },
   "PageLayout": {
     "links": {
