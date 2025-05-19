@@ -9,13 +9,6 @@ export default function middleware(request: NextRequest) {
   
   // Tách các phần của pathname
   const pathSegments = pathname.split('/').filter(Boolean);
-  
-  // Kiểm tra route hợp lệ
-  const validRoutes = [
-    '/', 
-    '/pathnames',
-    // Thêm các route hợp lệ khác của bạn
-  ];
 
   // Xử lý trường hợp URL có nhiều locale
   if (pathSegments.length > 1 && 
