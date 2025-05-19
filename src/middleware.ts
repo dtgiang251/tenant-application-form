@@ -35,15 +35,6 @@ export default function middleware(request: NextRequest) {
     //return NextResponse.redirect(new URL(`/`, request.url));
   }
 
-  // Loại bỏ locale khỏi pathname để kiểm tra
-  const cleanPathname = pathSegments.slice(1).join('/');
-  
-  // Nếu route không hợp lệ
-  const isValidRoute = validRoutes.some(route => 
-    route === `/${cleanPathname}` || 
-    route === cleanPathname
-  );
-
   // Thay vì rewrite, sử dụng next-intl middleware để xử lý
   const intlMiddleware = createMiddleware({
     locales: routing.locales,
