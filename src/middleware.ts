@@ -1,6 +1,6 @@
 // src/middleware.ts
 import createMiddleware from 'next-intl/middleware';
-import {routing} from './i18n/routing';
+import { routing } from './i18n/routing';
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 
@@ -16,9 +16,23 @@ export default function middleware(request: NextRequest) {
     '/pathnames',
     // Thêm các route hợp lệ khác của bạn
   ];
+
+  // Xử lý trường hợp URL có nhiều locale
+  if (pathSegments.length > 1 && 
+      routing.locales.includes(pathSegments[0] as typeof routing.locales[number]) && 
+      routing.locales.includes(pathSegments[1] as typeof routing.locales[number])) {
+    // Nếu có 2 locale liên tiếp, loại bỏ locale đầu tiên
+    const newPathname = '/' + pathSegments[0] + '/' + pathSegments.slice(2).join('/');
+    return NextResponse.redirect(new URL(newPathname, request.url));
+  }
+
   // Kiểm tra locale
-  if (pathSegments.length > 0 && !routing.locales.includes(pathSegments[0] as typeof routing.locales[number])) {
-    return NextResponse.rewrite(new URL('/404', request.url));
+  const currentLocale = pathSegments[0];
+  const isValidLocale = routing.locales.includes(currentLocale as typeof routing.locales[number]);
+
+  if (!isValidLocale) {
+    // Chuyển hướng về locale mặc định nếu locale không hợp lệ
+    //return NextResponse.redirect(new URL(`/`, request.url));
   }
 
   // Loại bỏ locale khỏi pathname để kiểm tra
@@ -30,18 +44,16 @@ export default function middleware(request: NextRequest) {
     route === cleanPathname
   );
 
-  if (!isValidRoute) {
-    // Chuyển hướng đến trang 404
-    return NextResponse.rewrite(new URL('/404', request.url));
-  }
-
-  // Sử dụng middleware của next-intl
-  return createMiddleware({
+  // Thay vì rewrite, sử dụng next-intl middleware để xử lý
+  const intlMiddleware = createMiddleware({
     locales: routing.locales,
-    defaultLocale: 'fr', 
+    defaultLocale: routing.defaultLocale, 
     localePrefix: 'as-needed',
     pathnames: routing.pathnames
-  })(request);
+  });
+
+  // Nếu route không hợp lệ, để next-intl middleware xử lý
+  return intlMiddleware(request);
 }
 
 export const config = {
