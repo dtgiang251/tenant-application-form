@@ -2,9 +2,21 @@ import Link from 'next/link';
 import siteMetadata from "../../data/siteMetadata";
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
+import { useLocale } from 'next-intl'
+import {routing} from '@/i18n/routing';
 
 export default function Footer() {
   const t  = useTranslations('Footer');
+
+  const currentLocale = useLocale();
+  
+    const getHomeLink = () => {
+      if (currentLocale === routing.defaultLocale) {
+        return '/';
+      }
+      
+      return `/${currentLocale}`;
+    }
 
   return (
     <footer className="footer">
@@ -13,7 +25,7 @@ export default function Footer() {
         <div className="footer-main flex flex-col lg:flex-row gap-15 justify-between items-center pt-20 pb-10 space-x-4 leading-4.5 border-b border-gray-200">
           
           <div className="footer-logo">
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
+            <Link href={getHomeLink()} aria-label={siteMetadata.headerTitle}>
             <Image src={`/static/footer-logo.svg`} alt={'address'} width={362} height={71} />
             </Link>
           </div>
