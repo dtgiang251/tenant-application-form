@@ -4,6 +4,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {ReactNode} from 'react';
 import {clsx} from 'clsx';
 import {Inter, Poppins} from 'next/font/google';
+import Script from 'next/script';
 import {routing} from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -81,6 +82,20 @@ export default async function LocaleLayout({children, params}: Props) {
   return (
     <html className="html" lang={locale}>
       <body className={clsx(inter.className, poppins.className, 'flex flex-col')}>
+        
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16586806867"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16586806867');
+          `}
+        </Script>
+
         <NextIntlClientProvider>
           <Navigation />
           {children}
