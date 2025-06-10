@@ -28,14 +28,14 @@ export default function LogoClient() {
       aria-label={siteMetadata.headerTitle} 
       onClick={handleLogoClick}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-center">
         <div className="mr-3">
           <Image 
-            src="/static/logo.svg" 
+            src="/nextimmo-logo.svg" 
             alt={'logo'} 
-            className="w-[186px] h-[36px] sm:w-auto sm:h-auto" 
-            width={186} 
-            height={36} 
+            className="w-[300px] h-[60px]" 
+            width={300} 
+            height={60} 
             unoptimized 
           />
         </div>
