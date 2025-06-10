@@ -237,5 +237,5 @@ const adminMailOptions = {
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json({ message: 'Error sending emails' }, { status: 500 });
-  }
+  } 
 }
