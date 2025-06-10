@@ -1,6 +1,5 @@
 import {useTranslations} from 'next-intl';
-import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 
 export default function BookingForm() {
   const t = useTranslations('Form');
