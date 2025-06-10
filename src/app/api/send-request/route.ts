@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
-import formidable from 'formidable';
+import { IncomingForm } from 'formidable';
 import { IncomingMessage } from 'http';
 
 
@@ -15,7 +15,7 @@ interface ProfessionalDetail {
 
 export async function POST(request: Request) {
 
-  const form = new formidable.IncomingForm();
+  const form = new IncomingForm(); 
 
   // Chuyển request thành Promise để xử lý dữ liệu
   const formData = await new Promise<any>((resolve, reject) => {
