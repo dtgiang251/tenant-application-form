@@ -37,7 +37,7 @@ export default function LocaleSwitcherSelect({
   }
 
   return (
-    <div className="relative">
+    <div className="absolute right-0">
       <button 
         className="language-btn cursor-pointer w-8 h-8 rounded-full text-sm text-center text-white uppercase"
         onClick={() => setIsOpen(!isOpen)}

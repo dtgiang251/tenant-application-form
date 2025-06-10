@@ -102,7 +102,7 @@ export default function BookingForm() {
     <>
       
     <div className="form-wrap relative">
-      <div className="container mx-auto pt-32 sm:pt-24 pb-24">
+      <div className="container mx-auto pt-10 pb-10">
         <form 
           onSubmit={handleFinalSubmit} 
           noValidate 
@@ -121,7 +121,7 @@ export default function BookingForm() {
               />
             </div>
             <div className="section-form">
-            <div className="step-content mx-auto mt-12 pt-12 pb-15 border-t border-gray-200">
+            <div className="step-content mx-auto mt-3 pt-12 pb-15 border-t border-gray-200">
               <h3 className="form-sub-title">{t('criteria_title')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7.5 mb-12">
                 
@@ -200,14 +200,6 @@ export default function BookingForm() {
                 </div>
               </div>
 
-            </div>
-            </div>
-          </div>
-
-          <div className={`form-step step2 border-1 p-5 md:p-10 border-gray-100 max-w-[1200px] rounded-[24px] bg-white relative z-10 pt-10 mx-auto`}>
-            
-            <div className="step-content max-w-[1120px] mx-auto mt-12 pt-12 pb-15 border-t border-gray-200">
-              
               <div className="text-center mt-12">
                 <button disabled={loading} type="submit" className="form-submit bg-black text-[16px] font-semibold inline-flex px-10 py-5 text-white rounded-[50px] mx-auto cursor-pointer">
                   {t('secretimmo_button')}
@@ -220,11 +212,10 @@ export default function BookingForm() {
                 )}
               </div>
 
-
+            </div>
             </div>
           </div>
 
-            
           {submitMessage && (
               <div 
                 className={`
