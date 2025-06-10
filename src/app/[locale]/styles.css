@@ -268,7 +268,11 @@
   }
   
   .property-form label {
-    @apply font-bold block mb-1.5;
+    @apply font-bold block mb-3;
+  }
+
+  .property-form .list label {
+      margin-bottom: 0;
   }
   
   .property-form .form-radios label {
@@ -276,6 +280,9 @@
   }
   
   .property-form select,
+  .property-form input[type="month"],
+  .property-form input[type="tel"],
+  .property-form input[type="date"],
   .property-form input[type="text"],
   .property-form input[type="email"],
   .property-form input[type="number"] {
