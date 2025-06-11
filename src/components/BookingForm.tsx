@@ -1452,7 +1452,7 @@ export default function BookingForm() {
               </div>
               <div className="grid grid-cols-2">
                 <div className="item">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('main_applicant_signature')}</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('main_applicant_signature')} *</label>
                   <SignatureCanvas
                     penColor="black"
                     backgroundColor="transparent"

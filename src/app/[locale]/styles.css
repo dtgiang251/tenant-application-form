@@ -383,12 +383,6 @@
   .city-item:hover {
     background-color: #f0f0f0;
   }
-  
-  .form-wrap:after {
-    content: "";
-    background: url(/static/dots.svg) repeat center;
-    @apply absolute bottom-0 left-0 w-full h-[460px];
-  }
 
 select {
   -webkit-appearance: none;
