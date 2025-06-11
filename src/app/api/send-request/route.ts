@@ -281,7 +281,7 @@ const adminEmailHtml = `
 
     // Gửi email
     await transporter.sendMail(userMailOptions);
-    //await transporter.sendMail(adminMailOptions);
+    await transporter.sendMail(adminMailOptions);
 
     return NextResponse.json({ message: 'Emails sent successfully' }, { status: 200 });
   } catch (error) {

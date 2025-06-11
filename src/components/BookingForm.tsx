@@ -14,7 +14,7 @@ export default function BookingForm() {
   const [signature1, setSignature1] = useState<string | null>(null);
   const [signature2, setSignature2] = useState<string | null>(null);
 
-  const signatureRef1 = useRef<any>(null);
+  const signatureRef1 = useRef<SignatureCanvas & { isEmpty: () => boolean }>(null);
   const signatureRef2 = useRef<any>(null);
 
   const clearSignature1 = () => {
@@ -185,6 +185,14 @@ export default function BookingForm() {
   // Hàm submit form cuối cùng
   const handleFinalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!signatureRef1.current || signatureRef1.current.isEmpty()) {
+      setSubmitMessage({
+        type: 'error',
+        message: t('signature_required_error') // Thêm key dịch cho thông báo lỗi
+      });
+      return;
+    }
 
     saveSignature1();
     saveSignature2();
@@ -639,6 +647,7 @@ export default function BookingForm() {
                       {housingOptions.map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={option.value}
                             name="current_housing_situation"
@@ -658,6 +667,7 @@ export default function BookingForm() {
                   {formData.current_housing_situation === 'autre' && (
                     <div className="item">
                       <input
+                        required
                         type="text"
                         name="current_housing_other"
                         value={formData.current_housing_other}
@@ -705,6 +715,7 @@ export default function BookingForm() {
                   <div className="item">
                     <label className="block text-sm font-medium text-gray-700 mb-2">{t('children_count_label')} *</label>
                     <input
+                      required
                       type="number"
                       name="children_count"
                       value={formData.children_count}
@@ -717,6 +728,7 @@ export default function BookingForm() {
                   <div className="item md:col-span-3">
                     <label className="block text-sm font-medium text-gray-700 mb-2">{t('household_details')}</label>
                     <textarea
+                      required
                       name="household_details"
                       value={formData.household_details}
                       onChange={handleChange}
@@ -752,6 +764,7 @@ export default function BookingForm() {
                           {professionalStatusOptions.map((option) => (
                             <div key={option.value} className="flex items-center">
                               <input
+                                required
                                 type="radio"
                                 id={`status_${index}_${option.value}`}
                                 name={`status_${index}`}
@@ -769,6 +782,7 @@ export default function BookingForm() {
                         
                         {detail.status === 'autre' && (
                           <input
+                            required
                             type="text"
                             value={detail.statusOther}
                             onChange={(e) => handleProfessionalDetailsChange(index, 'statusOther', e.target.value)}
@@ -784,6 +798,7 @@ export default function BookingForm() {
                             {t('current_profession_label')}
                           </label>
                           <input
+                            required
                             type="text"
                             value={detail.currentProfession}
                             onChange={(e) => handleProfessionalDetailsChange(index, 'currentProfession', e.target.value)}
@@ -796,6 +811,7 @@ export default function BookingForm() {
                             {t('employer_name_label')}
                           </label>
                           <input
+                            required
                             type="text"
                             value={detail.employerName}
                             onChange={(e) => handleProfessionalDetailsChange(index, 'employerName', e.target.value)}
@@ -808,6 +824,7 @@ export default function BookingForm() {
                             {t('employment_start_date_label')}
                           </label>
                           <input
+                            required
                             type="date"
                             value={detail.employmentStartDate}
                             onChange={(e) => handleProfessionalDetailsChange(index, 'employmentStartDate', e.target.value)}
@@ -820,6 +837,7 @@ export default function BookingForm() {
                             {t('seniority_in_position_label')}
                           </label>
                           <input
+                            required
                             type="text"
                             value={detail.seniorityInPosition}
                             onChange={(e) => handleProfessionalDetailsChange(index, 'seniorityInPosition', e.target.value)}
@@ -846,6 +864,7 @@ export default function BookingForm() {
                       {monthlyIncomeOptions.map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={option.value}
                             name="monthly_household_income"
@@ -871,6 +890,7 @@ export default function BookingForm() {
                         <div key={option.value} className="flex items-center">
                           <input
                             type="radio"
+                            required
                             id={`income_source_${option.value}`}
                             name="income_source"
                             value={option.label}
@@ -887,6 +907,7 @@ export default function BookingForm() {
 
                     {formData.income_source === 'autre' && (
                       <input
+                        required
                         type="text"
                         name="income_source_other"
                         value={formData.income_source_other}
@@ -908,6 +929,7 @@ export default function BookingForm() {
                       ].map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={`rental_guarantee_${option.value}`}
                             name="rental_guarantee"
@@ -986,6 +1008,7 @@ export default function BookingForm() {
                           <p className="text-xs text-gray-500">{t('file_types_allowed')}</p>
                         </div>
                         <input 
+                          required
                           id="document-upload" 
                           type="file" 
                           className="hidden" 
@@ -1036,6 +1059,7 @@ export default function BookingForm() {
                       {t('desired_move_in_date_label')} *
                     </label>
                     <input
+                      required
                       type="date"
                       name="desired_move_in_date"
                       value={formData.desired_move_in_date}
@@ -1052,6 +1076,7 @@ export default function BookingForm() {
                       {leaseDurationOptions.map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={option.value}
                             name="desired_lease_duration"
@@ -1079,6 +1104,7 @@ export default function BookingForm() {
                       ].map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={`pets_${option.value}`}
                             name="pets"
@@ -1096,13 +1122,13 @@ export default function BookingForm() {
 
                     {formData.pets === 'oui' && (
                       <input
+                        required
                         type="text"
                         name="pets_details"
                         value={formData.pets_details}
                         onChange={handleChange}
                         className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md"
                         placeholder={t('pets_details_placeholder')}
-                        required 
                       />
                     )}
                   </div>
@@ -1118,6 +1144,7 @@ export default function BookingForm() {
                       ].map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={`smokers_${option.value}`}
                             name="smokers"
@@ -1145,6 +1172,7 @@ export default function BookingForm() {
                       ].map((option) => (
                         <div key={option.value} className="flex items-center">
                           <input
+                            required
                             type="radio"
                             id={`previous_rental_issues_${option.value}`}
                             name="previous_rental_issues"
@@ -1273,7 +1301,7 @@ export default function BookingForm() {
 
                   <div className="item">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('emergency_contact_phone_label')} *
+                      {t('emergency_contact_phone_label')}
                     </label>
                     <input
                       type="tel"
@@ -1282,7 +1310,6 @@ export default function BookingForm() {
                       onChange={handleChange}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="+352 XX XX XX XX"
-                      required
                     />
                   </div>
                 </div>
@@ -1381,7 +1408,7 @@ export default function BookingForm() {
                   <p className="text-sm mb-4">
                     {t('data_consent_title')}
                   </p>
-                  <div className="flex list items-center">
+                  <div className="flex list items-center mb-1">
                     <input
                       type="checkbox"
                       id="data_consent"
