@@ -495,7 +495,7 @@ export default function BookingForm() {
                     >
                       <option value="">{t('country_select_label')}</option>
                       {countries.map((country, index) => (
-                        <option key={index} value={index.toString()}>
+                        <option key={index} value={country}>
                           {country}
                         </option>
                       ))}
@@ -595,7 +595,7 @@ export default function BookingForm() {
                     >
                       <option value="">{t('country_select_label')}</option>
                       {countries.map((country, index) => (
-                        <option key={index} value={index.toString()}>
+                        <option key={index} value={country}>
                           {country}
                         </option>
                       ))}
@@ -642,7 +642,7 @@ export default function BookingForm() {
                             type="radio"
                             id={option.value}
                             name="current_housing_situation"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.current_housing_situation === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -755,7 +755,7 @@ export default function BookingForm() {
                                 type="radio"
                                 id={`status_${index}_${option.value}`}
                                 name={`status_${index}`}
-                                value={option.value}
+                                value={option.label}
                                 checked={detail.status === option.value}
                                 onChange={(e) => handleProfessionalDetailsChange(index, 'status', e.target.value)}
                                 className="mr-2"
@@ -849,7 +849,7 @@ export default function BookingForm() {
                             type="radio"
                             id={option.value}
                             name="monthly_household_income"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.monthly_household_income === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -873,7 +873,7 @@ export default function BookingForm() {
                             type="radio"
                             id={`income_source_${option.value}`}
                             name="income_source"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.income_source === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -911,7 +911,7 @@ export default function BookingForm() {
                             type="radio"
                             id={`rental_guarantee_${option.value}`}
                             name="rental_guarantee"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.rental_guarantee === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -1055,7 +1055,7 @@ export default function BookingForm() {
                             type="radio"
                             id={option.value}
                             name="desired_lease_duration"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.desired_lease_duration === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -1082,7 +1082,7 @@ export default function BookingForm() {
                             type="radio"
                             id={`pets_${option.value}`}
                             name="pets"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.pets === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -1121,7 +1121,7 @@ export default function BookingForm() {
                             type="radio"
                             id={`smokers_${option.value}`}
                             name="smokers"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.smokers === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -1148,7 +1148,7 @@ export default function BookingForm() {
                             type="radio"
                             id={`previous_rental_issues_${option.value}`}
                             name="previous_rental_issues"
-                            value={option.value}
+                            value={option.label}
                             checked={formData.previous_rental_issues === option.value}
                             onChange={handleChange}
                             className="mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"

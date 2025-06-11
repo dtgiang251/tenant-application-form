@@ -1,8 +1,5 @@
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
-import { IncomingForm } from 'formidable';
-import { IncomingMessage } from 'http';
-
 
 interface ProfessionalDetail {
   status: string;
@@ -13,26 +10,76 @@ interface ProfessionalDetail {
   seniorityInPosition: string;
 }
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
+
 export async function POST(request: Request) {
 
-  const form = new IncomingForm(); 
+  const data = await request.formData();
+  
+  // Chuyển đổi formData sang object
+  const formData: Record<string, any> = {};
+  const professionalDetails: ProfessionalDetail[] = [];
+  const attachments: any[] = [];
+  const signatures: any[] = [];
 
-  // Chuyển request thành Promise để xử lý dữ liệu
-  const formData = await new Promise<any>((resolve, reject) => {
-    form.parse(request as unknown as IncomingMessage, (err: Error | null, fields: any) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(fields);
+  // Sử dụng Promise.all để xử lý bất đồng bộ
+  await Promise.all(Array.from(data.entries()).map(async ([key, value]) => {
+    // Xử lý professional details
+    const professionalMatch = key.match(/^professionalDetails\[(\d+)\]\[(\w+)\]$/);
+    if (professionalMatch) {
+      const index = parseInt(professionalMatch[1]);
+      const field = professionalMatch[2];
+      
+      if (!professionalDetails[index]) {
+        professionalDetails[index] = {
+          status: '',
+          currentProfession: '',
+          employerName: '',
+          employmentStartDate: '',
+          seniorityInPosition: ''
+        };
       }
-    });
-  });
+      
+      professionalDetails[index][field as keyof ProfessionalDetail] = value.toString();
+    } 
+    
+    else if (key === 'signature1' || key === 'signature2') {
+      if (typeof value === 'string' && value.startsWith('data:image/png;base64,')) {
+        const base64Data = value.split(',')[1];
+        signatures.push({
+          filename: `${key}.png`,
+          content: Buffer.from(base64Data, 'base64'),
+          contentType: 'image/png'
+        });
+      }
+    }
+    else if ( key.startsWith('documents[') ) {
+      if (value instanceof File) {
+        // Chuyển đổi File thành buffer
+        const buffer = await value.arrayBuffer();
+        attachments.push({
+          filename: value.name || `${key}.png`,
+          content: Buffer.from(buffer),
+          contentType: value.type || 'image/png'
+        });
+      }
+    }
+    // Xử lý các trường khác
+    else {
+      formData[key] = value;
+    }
+  }));
+
+  // Lọc professional details
+  formData.professionalDetails = professionalDetails.filter(detail => detail.status);
 
   try {
     const currentYear = new Date().getFullYear();
-
-    // Lấy translations (bạn có thể điều chỉnh locale nếu cần)
-    // const { t } = await getTranslations('fr', "email");
 
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -211,31 +258,41 @@ const adminEmailHtml = `
 </div>
 `;
 
+    const allAttachments = [...attachments, ...signatures];
 
-// Tùy chọn gửi email cho người dùng
-const userMailOptions = {
-  from: '"NextImmo" <noreply@nextimmo.lu>',
-  to: formData.email,
-  subject: 'Confirmation de votre demande de location',
-  html: userEmailHtml,
-};
+    // Tùy chọn gửi email cho người dùng
+    const userMailOptions = {
+      from: '"NextImmo" <noreply@nextimmo.lu>',
+      to: formData.email.toString(),
+      subject: 'Confirmation de votre demande de location',
+      html: userEmailHtml,
+      attachments: allAttachments
+    };
 
-// Tùy chọn gửi email cho quản trị viên
-const adminMailOptions = {
-  from: '"NextImmo" <noreply@nextimmo.lu>',
-  to: process.env.ADMIN_EMAIL,
-  subject: 'Nouvelle demande de location',
-  html: adminEmailHtml,
-};
+    // Tùy chọn gửi email cho quản trị viên
+    const adminMailOptions = {
+      from: '"NextImmo" <noreply@nextimmo.lu>',
+      to: process.env.ADMIN_EMAIL?.toString(),
+      subject: 'Nouvelle demande de location',
+      html: adminEmailHtml,
+      attachments: allAttachments
+    };
 
 
     // Gửi email
     await transporter.sendMail(userMailOptions);
-    await transporter.sendMail(adminMailOptions);
+    //await transporter.sendMail(adminMailOptions);
 
     return NextResponse.json({ message: 'Emails sent successfully' }, { status: 200 });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ message: 'Error sending emails' }, { status: 500 });
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      professionalDetails: formData.professionalDetails
+    });
+    return NextResponse.json({ 
+      message: 'Error sending emails', 
+      error: error instanceof Error ? error.message : 'Unknown error' 
+    }, { status: 500 });
   } 
 }
+

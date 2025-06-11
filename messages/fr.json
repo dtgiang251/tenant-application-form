@@ -1,27 +1,27 @@
 {
   "IndexPage": {
-    "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
+    "description": "Ceci est un exemple de base qui démontre l'utilisation de <code>next-intl</code> avec le Next.js App Router. Essayez de changer la locale dans le coin supérieur droit et voyez comment le contenu change.",
     "title": "Secretimmo"
-  }, 
+  },
   "Manifest": {
     "name": "Secretimmo"
   },
   "PathnamesPage": {
-    "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
-    "title": "Pathnames"
+    "description": "<p>Les chemins sont également internationalisés.</p><p>Si vous utilisez la langue par défaut, l'anglais, vous verrez <code>/en/pathnames</code> dans la barre d'adresse du navigateur sur cette page.</p><p>Si vous changez la locale en allemand, l'URL sera localisée en conséquence (<code>/de/pfadnamen</code>).</p>",
+    "title": "Chemins"
   },
   "Error": {
-    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
-    "title": "Something went wrong!"
+    "description": "<p>Nous avons malheureusement rencontré une erreur.</p><p>Vous pouvez essayer de <retry>recharger la page</retry> que vous visitiez.</p>",
+    "title": "Quelque chose a mal tourné !"
   },
   "LocaleLayout": {
-    "title": "Confidential Sale of Exceptional Real Estate in Luxembourg Off-Market by Secretimmo",
-    "description": "Sell your prestige property discreetly off-market with Secretimmo. Confidential service, network of qualified buyers, fast and free valuation.",
-    "ogTitle": "Confidential Sale of Exceptional Real Estate Off-Market",
-    "ogDescription": "Secretimmo is a discreet service dedicated to owners wishing to sell without public exposure.",
-    "twitterTitle": "Discreet Real Estate Sale",
-    "twitterDescription": "Confidential service dedicated to high-end properties for sale in Luxembourg.",
-    "canonical" : "https://off-market.lu/en"
+    "title": "Vente confidentielle de biens immobiliers exceptionnels à Luxembourg hors marché par Secretimmo",
+    "description": "Vendez votre bien immobilier de prestige discrètement hors marché avec Secretimmo. Service confidentiel, réseau d'acheteurs qualifiés, évaluation rapide et gratuite.",
+    "ogTitle": "Vente confidentielle de biens immobiliers exceptionnels hors marché",
+    "ogDescription": "Secretimmo est un service discret dédié aux propriétaires souhaitant vendre sans exposition publique.",
+    "twitterTitle": "Vente immobilière discrète",
+    "twitterDescription": "Service confidentiel dédié aux propriétés de haut standing à vendre au Luxembourg.",
+    "canonical" : "https://off-market.lu/fr"
   },
   "NotFoundPage": {
     "description": "Veuillez vérifier l'adresse dans la barre de navigation ou utilisez le menu pour accéder à une page connue.",
