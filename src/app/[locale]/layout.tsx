@@ -46,9 +46,9 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
       title: t('ogTitle'),
       description: t('ogDescription'),
       images: [{
-        url: 'https://off-market.lu/images/prestige-cover.jpg',
+        url: '',
       }],
-      url: 'https://off-market.lu',
+      url: '',
       type: 'website',
     },
     twitter: {
