@@ -411,9 +411,9 @@ export default function BookingForm() {
         >
         <div className={`form-step step1 border-1 border-gray-100 max-w-[1200px] rounded-[24px] bg-white relative z-10 pt-10 px-5 sm:px-10 mx-auto`}>
             <div className="form-top-head pb-15">
-              <h2 className="text-5xl text-black inline-flex flex-col sm:flex-row items-center gap-5 justify-center font-bold mb-5">
+              <h1 className="text-5xl text-black inline-flex flex-col sm:flex-row items-center gap-5 justify-center font-bold mb-5">
                 {t('title')}
-              </h2>
+              </h1>
               <div
                 className="text-black italic text-[18px] leading-[24px]"
                 dangerouslySetInnerHTML={{
@@ -423,9 +423,9 @@ export default function BookingForm() {
             </div>
 
             <div className="form-second-head border-t pt-15 pb-15 border-gray-200">
-              <h3 className="text-2xl text-black inline-flex flex-col sm:flex-row items-center gap-5 justify-center font-bold mb-5">
+              <h2 className="text-2xl text-black inline-flex flex-col sm:flex-row items-center gap-5 justify-center font-bold mb-5">
                 {t('second_title')}
-              </h3>
+              </h2>
               <p
                 className="text-black mb-6 text-[16px] leading-[24px]"
                 dangerouslySetInnerHTML={{

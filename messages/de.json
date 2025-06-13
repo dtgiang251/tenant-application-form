@@ -15,13 +15,13 @@
     "title": "Etwas ist schief gelaufen!"
   },
   "LocaleLayout": {
-    "title": "Vertraulicher Verkauf von außergewöhnlichen Immobilien in Luxemburg außerhalb des Marktes durch Secretimmo",
-    "description": "Verkaufen Sie Ihre prestigeträchtige Immobilie diskret außerhalb des Marktes mit Secretimmo. Vertraulicher Service, Netzwerk von qualifizierten Käufern, schnelle und kostenlose Bewertung.",
-    "ogTitle": "Vertraulicher Verkauf außergewöhnlicher Immobilien außerhalb des Marktes",
-    "ogDescription": "Secretimmo ist ein diskreter Service, der sich an Eigentümer richtet, die ohne öffentliche Bekanntgabe verkaufen möchten.",
-    "twitterTitle": "Diskreter Immobilienverkauf",
-    "twitterDescription": "Vertraulicher Service für hochwertige Immobilien zum Verkauf in Luxemburg.",
-    "canonical": "https://off-market.lu/de"
+    "title": "Bewerbungsformular für Mietinteressenten",
+    "description": "",
+    "ogTitle": "Bewerbungsformular für Mietinteressenten",
+    "ogDescription": "",
+    "twitterTitle": "",
+    "twitterDescription": "",
+    "canonical" : "https://tenant-application-form.vercel.app/de"
   },
   "NotFoundPage": {
     "description": "Bitte überprüfen Sie die Adresse in der Navigationsleiste oder verwenden Sie das Menü, um eine bekannte Seite zu erreichen.",

@@ -15,13 +15,13 @@
     "title": "Quelque chose a mal tourné !"
   },
   "LocaleLayout": {
-    "title": "Vente confidentielle de biens immobiliers exceptionnels à Luxembourg hors marché par Secretimmo",
-    "description": "Vendez votre bien immobilier de prestige discrètement hors marché avec Secretimmo. Service confidentiel, réseau d'acheteurs qualifiés, évaluation rapide et gratuite.",
-    "ogTitle": "Vente confidentielle de biens immobiliers exceptionnels hors marché",
-    "ogDescription": "Secretimmo est un service discret dédié aux propriétaires souhaitant vendre sans exposition publique.",
-    "twitterTitle": "Vente immobilière discrète",
-    "twitterDescription": "Service confidentiel dédié aux propriétés de haut standing à vendre au Luxembourg.",
-    "canonical" : "https://off-market.lu/fr"
+    "title": "Formulaire pour les candidats à la location",
+    "description": "",
+    "ogTitle": "Formulaire pour les candidats à la location",
+    "ogDescription": "",
+    "twitterTitle": "",
+    "twitterDescription": "",
+    "canonical" : "https://tenant-application-form.vercel.app/"
   },
   "NotFoundPage": {
     "description": "Veuillez vérifier l'adresse dans la barre de navigation ou utilisez le menu pour accéder à une page connue.",

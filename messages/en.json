@@ -15,13 +15,13 @@
     "title": "Something went wrong!"
   },
   "LocaleLayout": {
-    "title": "Confidential sale of exceptional real estate properties off-market in Luxembourg by Secretimmo",
-    "description": "Sell your prestigious real estate discreetly off-market with Secretimmo. Confidential service, network of qualified buyers, fast and free evaluation.",
-    "ogTitle": "Confidential sale of exceptional off-market properties",
-    "ogDescription": "Secretimmo is a discreet service dedicated to owners who wish to sell without public exposure.",
-    "twitterTitle": "Discrete property sale",
-    "twitterDescription": "Confidential service dedicated to high-end properties for sale in Luxembourg.",
-    "canonical": "https://off-market.lu/en"
+    "title": "Rental Application Form",
+    "description": "",
+    "ogTitle": "Rental Application Form",
+    "ogDescription": "",
+    "twitterTitle": "",
+    "twitterDescription": "",
+    "canonical" : "https://tenant-application-form.vercel.app/en"
   },
   "NotFoundPage": {
     "description": "Please check the address in the navigation bar or use the menu to access a known page.",
