@@ -33,9 +33,9 @@ export default function LogoClient() {
           <Image 
             src="/nextimmo-logo.svg" 
             alt={'logo'} 
-            className="w-[300px] h-[60px]" 
-            width={300} 
-            height={60} 
+            className="w-[198px] h-[36px]" 
+            width={198} 
+            height={36} 
             unoptimized 
           />
         </div>

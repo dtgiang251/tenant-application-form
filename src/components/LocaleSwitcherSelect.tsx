@@ -2,10 +2,9 @@
 
 import {useParams} from 'next/navigation';
 import {Locale} from 'next-intl';
-import {useState, useTransition} from 'react';
+import { useTransition} from 'react';
 import {usePathname, useRouter} from '@/i18n/navigation';
 import {routing} from '@/i18n/routing';
-import {useLocale} from 'next-intl';
 
 type Props = {
   defaultValue: string;
@@ -16,11 +15,9 @@ export default function LocaleSwitcherSelect({
   defaultValue
 }: Props) {
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
-  const [isOpen, setIsOpen] = useState(false);
-  const currentLocale = useLocale(); 
 
   function changeLanguage(nextLocale: Locale) {
   
@@ -32,33 +29,22 @@ export default function LocaleSwitcherSelect({
         {pathname, params},
         {locale: nextLocale}
       );
-      setIsOpen(false);
+      
     });
   }
 
   return (
-    <div className="absolute right-0">
-      <button 
-        className="language-btn cursor-pointer w-8 h-8 rounded-full text-sm text-center text-white uppercase"
-        onClick={() => setIsOpen(!isOpen)}
-        disabled={isPending}
-      >
-        {currentLocale.toUpperCase()}
-      </button>
-      
-      {isOpen && (
-        <div className="absolute left-0 mt-2 w-8">
-          {routing.locales.filter(lng => lng !== defaultValue).map((lng) => (
-            <button 
-              key={lng} 
-              onClick={() => changeLanguage(lng)} 
-              className="language-btn cursor-pointer w-8 h-8 rounded-full text-sm text-center text-white uppercase mb-1"
-            >
-              {lng.toUpperCase()}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+      <div className="flex gap-1.5">
+        {routing.locales.filter(lng => lng).map((lng, index, arr) => (
+          <button 
+            key={lng} 
+            onClick={() => changeLanguage(lng)} 
+            className={`language-btn cursor-pointer text-sm text-center text-gray-900 font-bold uppercase mb-1 ${lng === defaultValue ? 'opacity-100' : 'opacity-50'}`}
+          >
+            {lng.toUpperCase()} {index !== arr.length - 1 && <span className="ml-0.5">/</span>}
+          </button>
+          
+        ))}
+      </div>
   );
 }

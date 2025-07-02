@@ -26,7 +26,7 @@ module.exports = {
         slate: {
           850: 'hsl(222deg 47% 16%)'
         },
-        primary: '#5fc3e7'
+        primary: '#B91C1C'
       },
       lineHeight: {
         '5.5': '1.375rem',

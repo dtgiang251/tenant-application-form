@@ -22,7 +22,7 @@ export default function PageLayout({children, title, isNotFoundPage = false}: Pr
 
   return (
     <>
-      <div id="booking_form" className="relative z-10 booking-form">
+      <div id="booking_form" className="relative z-100 booking-form">
         <BookingForm/>
       </div>
     </>

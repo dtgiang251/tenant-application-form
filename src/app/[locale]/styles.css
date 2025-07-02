@@ -11,7 +11,7 @@
   
     /* Colors */
     /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
-    --color-primary: #212151;
+    --color-primary: #B91C1C;
     --color-gray: #E5E7EB;
     --color-black2: #353433;
     --color-green: #BAFF00;
@@ -95,8 +95,8 @@
     }
   
     .container {
-      @media (min-width: 1280px) {
-        max-width: 1200px !important;
+      @media (min-width: 1320px) {
+        max-width: 1300px !important;
       }
       @media (max-width: 1024px) {
           max-width: 100% !important;
@@ -240,10 +240,6 @@
     border-right: 1px solid #E5E7EB;
   }
   
-  .language-btn {
-    background-color: #262626E5;
-  }
-  
   .banner h1 {
     font-size: 70px;
     line-height: 1.2;
@@ -264,15 +260,16 @@
   }
   
   .form-sub-title {
-    @apply font-bold text-[22px] pb-[26px] mb-[26px] border-b border-gray-200 text-center;
+    @apply font-bold text-xl mb-10;
   }
   
   .property-form label {
-    @apply font-bold block mb-3;
+    @apply font-medium block mb-1;
   }
 
   .property-form .list label {
       margin-bottom: 0;
+      font-weight: 400;
   }
   
   .property-form .form-radios label {
@@ -287,8 +284,8 @@
   .property-form input[type="email"],
   .property-form input[type="number"] {
     outline: none;
-    font-size: 16px;
-    @apply border border-[#E5E7EB] px-3 py-4 text-black leading-5.5 w-full rounded-[4px];
+    font-size: 14px;
+    @apply border border-gray-300 px-3 py-2 text-black leading-5 w-full rounded-[6px];
   }
   
   input[type="number"] {
@@ -420,3 +417,71 @@ select:focus {
     100% { transform: rotate(360deg); }
   }
   
+.menu-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-item:before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #9CA3AF;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.menu-item.active {
+  color: #B91C1C;
+}
+
+.menu-item.completed {
+    color: #171C28;
+}
+
+.menu-item.active:before {
+   background: #B91C1C;
+}
+
+.form-menu:before {
+    content: "";
+    border-left: 1px solid #e5e7eb;
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 1px;
+}
+
+.checkbox-wrap input,
+.radio-button input {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+}
+
+.checkbox-wrap .checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #E5E7EB;
+    display: block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkbox-wrap input:checked + .checkbox {
+    border: 0;
+    background: url('data:image/svg+xml,<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="1.4697" width="15" height="15" rx="3.5" fill="%23B91C1C"/><rect x="0.5" y="1.4697" width="15" height="15" rx="3.5" stroke="%23B91C1C"/><path d="M12.2064 5.7627C12.3939 5.95022 12.4992 6.20453 12.4992 6.4697C12.4992 6.73486 12.3939 6.98917 12.2064 7.1767L7.20643 12.1767C7.0189 12.3642 6.76459 12.4695 6.49943 12.4695C6.23427 12.4695 5.97996 12.3642 5.79243 12.1767L3.79243 10.1767C3.61027 9.98809 3.50948 9.73549 3.51176 9.4733C3.51403 9.2111 3.6192 8.96029 3.80461 8.77488C3.99002 8.58947 4.24083 8.4843 4.50303 8.48202C4.76523 8.47974 5.01783 8.58054 5.20643 8.7627L6.49943 10.0557L10.7924 5.7627C10.98 5.57523 11.2343 5.46991 11.4994 5.46991C11.7646 5.46991 12.0189 5.57523 12.2064 5.7627Z" fill="white"/></svg>');
+}
+
+.radio-button input:checked + label {
+    background: #B91C1C;
+    color: #fff;
+    border-color: #B91C1C;
+}
+
+.property-form label.dflex {
+    @apply flex;
+}

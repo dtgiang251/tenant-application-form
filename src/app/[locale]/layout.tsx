@@ -3,7 +3,7 @@ import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {ReactNode} from 'react';
 import {clsx} from 'clsx';
-import {Inter, Poppins} from 'next/font/google';
+import {Inter} from 'next/font/google';
 import Script from 'next/script';
 import {routing} from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
@@ -19,13 +19,6 @@ type Props = {
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-});
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -81,7 +74,7 @@ export default async function LocaleLayout({children, params}: Props) {
 
   return (
     <html className="html" lang={locale}>
-      <body className={clsx(inter.className, poppins.className, 'flex flex-col')}>
+      <body className={clsx(inter.className, 'flex flex-col text-gray-900')}>
         
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-16586806867"
