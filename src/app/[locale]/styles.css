@@ -93,17 +93,20 @@
       border-radius: var(--radius-sm);
       outline-color: var(--color-primary-500);
     }
-  
-    .container {
-      @media (min-width: 1320px) {
-        max-width: 1300px !important;
+    @media (min-width: 1320px) {
+      .container {
+          max-width: 1300px !important;
       }
-      @media (max-width: 1024px) {
-          max-width: 100% !important;
-          padding-left: 40px;
-          padding-right: 40px;
+    }
+    @media (max-width : 1319px) {
+      .container {
+      max-width: 100% !important;
+      padding-left: 40px;
+      padding-right: 40px;
       }
-      @media (max-width: 767px) {
+    }
+    @media (max-width: 767px) {
+      .container {
         padding-left: 20px;
         padding-right: 20px;
       }
@@ -392,6 +395,11 @@ select {
 
 select:focus {
   outline: none;
+}
+
+.signature-canvas {
+    width: 100% !important;
+    height: 180px !important;
 }
 
 .spinner {

@@ -630,11 +630,11 @@ export default function BookingForm() {
 
       <div className="form-top-head bg-gray-50 border-t border-b border-gray-200 text-center pb-15 pt-15">
         <div className="container">
-          <h1 className="text-5xl inline-flex flex-col sm:flex-row items-center gap-5 justify-center font-bold mb-5">
+          <h1 className="text-3xl sm:text-5xl inline-flex flex-col sm:flex-row items-center gap-5 justify-center font-bold mb-5">
             {t('title')}
           </h1>
           <div
-            className="text-[18px] leading-[24px] max-w-[490px] mx-auto"
+            className="text-lg leading-[24px] max-w-[490px] mx-auto"
             dangerouslySetInnerHTML={{
               __html: t('desc'),
             }}
@@ -650,61 +650,62 @@ export default function BookingForm() {
         >
           <div 
             className={`
-              relative flex items-start z-10 gap-5 pt-10 px-5 
+              relative flex lg:flex-row flex-col items-start z-10 gap-5 pt-10 px-0 lg:px-5 
               ${submitMessage && submitMessage.type === 'success' ? 'hidden' : ''}
             `}
           >
-            <div className="form-menu relative text-gray-400 text-xs font-semibold leading-4 tracking-[0.3px] uppercase flex flex-col gap-10 w-2/6">
+            <div className="form-menu relative text-gray-400 text-xs font-semibold leading-4 tracking-[0.3px] uppercase flex flex-row lg:flex-col gap-4 lg:gap-10 lg:w-2/6 w-full pb-3 overflow-x-auto lg:overflow-visible whitespace-nowrap lg:whitespace-normal scroll-smooth">
+
               <div 
-                className={`menu-item pl-4 ${currentStep === 1 ? 'active' : ''} ${currentStep > 1 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 1 ? 'active' : ''} ${currentStep > 1 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(1)}
               >
                 {t('menu1_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 2 ? 'active' : ''} ${currentStep > 2 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 2 ? 'active' : ''} ${currentStep > 2 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(2)}
               >
                 {t('menu2_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 3 ? 'active' : ''} ${currentStep > 3 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 3 ? 'active' : ''} ${currentStep > 3 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(3)}
               >
                 {t('menu3_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 4 ? 'active' : ''} ${currentStep > 4 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 4 ? 'active' : ''} ${currentStep > 4 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(4)}
               >
                 {t('menu4_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 5 ? 'active' : ''} ${currentStep > 5 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 5 ? 'active' : ''} ${currentStep > 5 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(5)}
               >
                 {t('menu5_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 6 ? 'active' : ''} ${currentStep > 6 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 6 ? 'active' : ''} ${currentStep > 6 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(6)}
               >
                 {t('menu6_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 7 ? 'active' : ''} ${currentStep > 7 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 7 ? 'active' : ''} ${currentStep > 7 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(7)}
               >
                 {t('menu7_title')}
               </div>
               <div 
-                className={`menu-item pl-4 ${currentStep === 8 ? 'active' : ''} ${currentStep > 8 ? 'completed' : ''}`}
+                className={`menu-item shrink-0 pl-4 ${currentStep === 8 ? 'active' : ''} ${currentStep > 8 ? 'completed' : ''}`}
                 onClick={() => jumpToStep(8)}
               >
                 {t('menu8_title')}
               </div>
             </div>
-            <div className="section-form w-4/6">
+            <div className="section-form w-full lg:w-4/6">
 
               {/* Section 1: Applicant's Information */}
               <div 
